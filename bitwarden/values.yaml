@@ -18,12 +18,12 @@ bitwarden:
     userName: bitwarden
     password: bitwarden%40321
   smtp:
-    host: toralsergio25@outlook.es
+    host: 
     port: 587
     security: starttls
     userName: sergio
     password: toral
-    fromEmail: toralsergio25@outlook.es
+    fromEmail: 
   signup:
     allowed: false
   domain: https://bw.example.com
