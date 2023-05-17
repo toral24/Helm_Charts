@@ -18,7 +18,7 @@ bitwarden:
     userName: bitwarden
     password: bitwarden%40321
   smtp:
-    host: exame@example.com
+    host: example@example.com
     port: 587
     security: starttls
     userName:
