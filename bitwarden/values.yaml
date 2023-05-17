@@ -54,7 +54,7 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt
     kubernetes.io/ingress.class: nginx
   hosts:
-    - host: bitwarden.local
+    - host: bw.example.com
       paths:
         - path: /
           pathType: Prefix
@@ -63,7 +63,7 @@ ingress:
   tls:
     - secretName: bitwarden-letsencrypt-certificate
       hosts:
-        - bitwarden.local
+        - bw.example.com
 
 resources: {}
 #  limits:
