@@ -72,8 +72,8 @@ phpClientHttpsFix:
 
 nextcloud:
   host: nextcloud.kube.home
-  username: admin
-  password: changeme
+  username: sergio
+  password: toral
   ## Use an existing secret
   existingSecret:
     enabled: false
