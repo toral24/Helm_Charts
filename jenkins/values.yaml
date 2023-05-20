@@ -559,7 +559,7 @@ controller:
 
   httpsKeyStore:
     jenkinsHttpsJksSecretName: ''
-    enable: false
+    enable: true
     disableSecretMount: true
     httpPort: 8081
     path: "/var/jenkins_keystore"

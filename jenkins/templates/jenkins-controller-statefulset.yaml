@@ -213,10 +213,17 @@ spec:
                 {{ if .Values.controller.jenkinsUriPrefix }}--prefix={{ .Values.controller.jenkinsUriPrefix }} {{ end }} --webroot=/var/jenkins_cache/war {{ default "" .Values.controller.jenkinsOpts}}
             - name: JENKINS_SLAVE_AGENT_PORT
               value: "{{ .Values.controller.agentListenerPort }}"
+            {{- if .Values.controller.httpsKeyStore.enable }}
             - name: JENKINS_HTTPS_KEYSTORE_PASSWORD
-
+            {{- if not .Values.controller.httpsKeyStore.disableSecretMount }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ if .Values.controller.httpsKeyStore.jenkinsHttpsJksSecretName }} {{ .Values.controller.httpsKeyStore.jenkinsHttpsJksSecretName }} {{ else }} {{ template "jenkins.fullname" . }}-https-jks  {{ end }}
+                  key: {{ "https-jks-password" | quote }}
+            {{- else }}
               value: {{ .Values.controller.httpsKeyStore.password }}
-
+            {{- end }}
+            {{- end }}
 
             - name: CASC_JENKINS_CONFIG
               value: {{ .Values.controller.sidecars.configAutoReload.folder | default (printf "%s/casc_configs" (.Values.controller.jenkinsRef)) }}{{- if .Values.controller.JCasC.configUrls }},{{ join "," .Values.controller.JCasC.configUrls }}{{- end }}
