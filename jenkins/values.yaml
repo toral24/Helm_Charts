@@ -678,7 +678,7 @@ service:
 agentListenerService:
   ## @param agentListenerService.enabled
   ##
-  enabled: true
+  enabled: false
   ## @param agentListenerService.type Jenkins service type
   ##
   type: nodePort
