@@ -327,7 +327,7 @@ configAsCode:
 agent:
   ## @param agent.enabled Set to true to enable the configuration of Jenkins kubernetes agents
   ##
-  enabled: false
+  enabled: true
   ## Bitnami Jenkins agent image
   ## ref: https://hub.docker.com/r/bitnami/jenkins/tags/
   ## @param agent.image.registry Jenkins image registry
@@ -679,7 +679,7 @@ service:
 agentListenerService:
   ## @param agentListenerService.enabled
   ##
-  enabled: enabled
+  enabled: true
   ## @param agentListenerService.type Jenkins service type
   ##
   type: nodePort
