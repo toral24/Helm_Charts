@@ -681,7 +681,7 @@ agentListenerService:
   enabled: true
   ## @param agentListenerService.type Jenkins service type
   ##
-  type: ClusterIP
+  type: nodePort
   ## @param agentListenerService.ports.agentListener Jenkins service agent listener port
   ##
   ports:
