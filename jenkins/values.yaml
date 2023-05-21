@@ -620,21 +620,20 @@ customReadinessProbe: {}
 service:
   ## @param service.type Jenkins service type
   ##
-  type: LoadBalancer
+  type: nodePort
   ## @param service.ports.http Jenkins service HTTP port
   ## @param service.ports.https Jenkins service HTTPS port
   ##
   ports:
     http: 80
-    https: 443
   ## Node ports to expose
   ## @param service.nodePorts.http Node port for HTTP
   ## @param service.nodePorts.https Node port for HTTPS
   ## NOTE: choose port between <30000-32767>
   ##
   nodePorts:
-    http: ""
-    https: ""
+    http: "80"
+    https: "443"
   ## @param service.clusterIP Jenkins service Cluster IP
   ## e.g.:
   ## clusterIP: None
