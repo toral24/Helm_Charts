@@ -626,14 +626,15 @@ service:
   ##
   ports:
     http: 80
+    https: 443
   ## Node ports to expose
   ## @param service.nodePorts.http Node port for HTTP
   ## @param service.nodePorts.https Node port for HTTPS
   ## NOTE: choose port between <30000-32767>
   ##
   nodePorts:
-    http: "80"
-    https: "443"
+    http: 80
+    https: 443
   ## @param service.clusterIP Jenkins service Cluster IP
   ## e.g.:
   ## clusterIP: None
@@ -678,20 +679,17 @@ service:
 agentListenerService:
   ## @param agentListenerService.enabled
   ##
-  enabled: false
+  enabled: enabled
   ## @param agentListenerService.type Jenkins service type
   ##
   type: nodePort
   ## @param agentListenerService.ports.agentListener Jenkins service agent listener port
-  ##
-  ports:
-    agentListener: 50000
   ## Node ports to expose
   ## @param agentListenerService.nodePorts.agentListener Node port for agent listener
   ## NOTE: choose port between <30000-32767>
   ##
   nodePorts:
-    agentListener: ""
+    agentListener: 80
   ## @param agentListenerService.clusterIP Jenkins service Cluster IP
   ## e.g.:
   ## clusterIP: None
