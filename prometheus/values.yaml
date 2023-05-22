@@ -487,7 +487,7 @@ alertmanager:
     ## NOTE: choose port between <30000-32767>
     ##
     nodePorts:
-      http: "80"
+      http: ""
     ## @param alertmanager.service.clusterIP Alertmanager service Cluster IP
     ## e.g.:
     ## clusterIP: None
